@@ -1,6 +1,6 @@
 #include <SDL2/SDL.h>
 
-bool g_bRunning = false;
+bool g_bRunning = true;
 
 SDL_Window* g_pWindow = 0;
 SDL_Renderer* g_pRenderer = 0;
@@ -13,7 +13,7 @@ int main(int argc, char* args[])
 {
 	if(init("Chapter 1: Setting up SDL", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN))
 	{
-		g_bRuning = true;
+		g_bRunning = true;
 	}
 	else 
 	{
@@ -24,6 +24,8 @@ int main(int argc, char* args[])
 	{
 		render();
 	}
+	SDL_Quit();
+
 	return 0;
 }
 
